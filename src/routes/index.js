@@ -11,6 +11,7 @@ router.get('/products', async (req, res) => {
   const products = await Product.find({})
   console.log(products)
   res.render('products', { products, title: 'Products' })
+  // res.send("<h1>Hello world</h1>")
 })
 
 module.exports = router;
