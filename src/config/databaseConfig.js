@@ -1,9 +1,9 @@
 const database = require('mongoose');
+const databaseName = 'food-x'
 
-
-database.connect('mongodb://127.0.0.1:27017/farmStand')
+database.connect(`mongodb://127.0.0.1:27017/${databaseName}`)
   .then(() => {
-    console.log('Connection open')
+    console.log(`Connection with ${databaseName} open.`)
   })
   .catch(err => {
     console.log('Oh no, error!')

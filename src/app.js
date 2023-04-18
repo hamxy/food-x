@@ -5,10 +5,16 @@ const path = require('path');
 
 
 // Routers
-const indexRouter = require('./routes/index');
+const indexRouter = require('./routes/products');
 
 // Routes
-app.use('/', indexRouter);
+// homepage
+app.get('/', (req, res) => {
+  res.render('index', { title: 'Express' });
+})
+
+// products
+app.use('/products', indexRouter);
 
 
 // View engine setup
