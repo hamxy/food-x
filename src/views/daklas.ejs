@@ -1,0 +1,30 @@
+<%- include('./partials/header') %>
+
+    <div class="container">
+        <div class="row text-center">
+            <h1>Hello Daklas!</h1>
+        </div>
+        <div class="row">
+            <video id="webCam" autoplay playsinline width="800" height="600"></video>
+            <canvas id="canvas"></canvas>
+        </div>
+    </div>
+
+<script>
+
+const webCamElement = document.getElementById("webCam");
+const canvasElement = document.getElementById("canvas"); 
+const snapSoundElement = document.getElementById('snapSound');
+const webcam = new Webcam(webCamElement, "user", canvasElement);
+
+webcam.start()
+   .then(result =>{
+      console.log("webcam started");
+   })
+   .catch(err => {
+       console.log(err);
+   });
+
+</script>
+
+<%- include('./partials/footer') %> 

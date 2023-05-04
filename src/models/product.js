@@ -14,7 +14,8 @@ const productSchema = new mongoose.Schema({
     },
     barcode: {
         type: Number,
-        required: false
+        required: false,
+        unique: false
     },
     kcal: {
         type: Number,

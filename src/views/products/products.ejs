@@ -1,11 +1,18 @@
 <%- include('../partials/header', {title: title}) %>
 
-    <h1><%= title %></h1>
+<div class="container">
+    <div class="row mb-3">
+        <h1><%= title %></h1>
+    </div>
+    <div class="row">
+        <ul>
+            <% products.forEach(product => { %>
+                <li><a href="/products/<%= product.id %>"><%= product.name %></a></li>
+            <% }); %>
+        </ul>
+    </div>
+</div>
     
-    <ul>
-        <% products.forEach(product => { %>
-            <li><%= product.name %></li>
-        <% }); %>
-    </ul>
+    
 
-<%- include('../partials/footer') %>
+<%- include('../partials/footer') %> 
